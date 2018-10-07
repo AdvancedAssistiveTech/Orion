@@ -1,0 +1,8 @@
+Goal of this step:
+
+- Add a function that allows employees to enter the code of a product
+  - The system  will then match the code to the product and allow the employee to enter the amount of that product to purchase
+  
+- After this, the system will total the sale and then allow the employee to add another item
+
+- This loop will continue untill the employee confirms the sale
