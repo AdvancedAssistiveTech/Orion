@@ -250,8 +250,9 @@ public class retail {
 			}
 			while(!exit) {
 				System.out.println("1. Register ancillaries" + "\n" +
-								   "2. Resave exisisting info" + "\n" + //TODO: Allow user to specify backup directory
-								   "3. Exit"); //First screen user sees after starting confirmed installation
+								   "2. Resave and view exisisting info" + "\n" + //TODO: Allow user to specify backup directory
+								   "3. Perform a sale" + "\n" +
+								   "4. Exit"); //First screen user sees after starting confirmed installation
 				uinputi = sc.nextInt();
 				if(uinputi == 1) {
 					uinputi = 0;
@@ -529,6 +530,69 @@ public class retail {
 					}
 				}
 				else if(uinputi == 3) {
+					if(indr.equals("c")) {
+						try {
+							f = new File("C:\\Orion\\impfiles\\70726f64696e666f.txt");
+						}
+						catch(Exception e) {
+							System.out.println("Unknown error. Line 535");
+						}
+					}
+					else {
+						try {
+							f = new File("D:\\Orion\\impfiles\\70726f64696e666f.txt");
+						}
+						catch(Exception e) {
+							System.out.println("Unknown error. Line 543");
+						}
+					}
+					if(f.exists()) {
+						if(indr.equals("c")) {
+							try {
+								reader = new Scanner(new File("C:\\Orion\\impfiles\\70726f64696e666f.txt"));
+							}
+							catch(Exception e) {
+								System.out.println("Unknown error. Line 552");
+							}
+						}
+						else {
+							try {
+								reader = new Scanner(new File("D:\\Orion\\impfiles\\70726f64696e666f.txt"));
+							}
+							catch(Exception e) {
+								System.out.println("Unknown error. Line 560");
+							}
+						}
+						expcount = reader.nextInt();
+						exproname = new String[expcount];
+						exprocode = new int[expcount];
+						exprovalue = new String[expcount];
+						arindxa = new int[expcount];
+						for(int lcontrol = 0; lcontrol < expcount; lcontrol++) {
+							exproname[lcontrol] = reader.next();
+							exprocode[lcontrol] = reader.nextInt();
+							exprovalue[lcontrol] = reader.next();
+							arindxa[lcontrol] = reader.nextInt();
+						}
+						valid = false;
+						while(!valid) {
+							System.out.print("Reference code of item: ");
+							uinputi = sc.nextInt();
+							int lcontrol = 0;
+							while(lcontrol < expcount || uinputi != exprocode[lcontrol]) {
+								lcontrol++;
+							}
+							if(uinputi == exprocode[lcontrol]) {
+								System.out.println("Confirm selected product (" + exproname[lcontrol] + ") (y, n)");
+								uinput = sc.next();
+								if(uinput.startsWith("y") || uinput.startsWith("Y")) {
+									valid = true;
+								}
+							}
+						}
+					}
+				}
+				else if(uinputi == 4) {
 					System.out.println("See you soon.");
 					exit = true;
 				}
