@@ -3,8 +3,8 @@ Used for the development of Orion retail assistant, an Eclipse based sales solut
 
 Orion is still under heavy development. The next step is to add a tool to total the price of a sale
 
-## Goal of this step:
 ##### (Sale-totaller)
+##### (Incomplete)
 
 - Add a function that allows employees to enter the code of a product
   - The system  will then match the code to the product and allow the employee to enter the amount of that product to purchase
