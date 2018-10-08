@@ -15,14 +15,14 @@ public class retail {
 		Boolean exit = false; //Controls main running loop
 		String proname[], exproname[]; //Product name, existing product name
 		String empname[], empsname[], exempname[], exempsname[]; //Employee name and surname, existing for editing file
-		String uinput; //user input
+		String uinput = ""; //user input
 		String indr = ""; //Selected installation drive
 		File f = null; //To check if contextual file exists
 		File blankfile = null; //To create blank files when needed
 		Scanner sc = new Scanner(System.in);
 		Scanner reader = null; // Scanner to read from files
 		Formatter drivemem = null; // Installation drive memoriser
-		Formatter writer = null; //Variable to write to files
+		Formatter writer = new Formatter(); //Variable to write to files
 		Random cgen = new Random(); //Generates manager code
 		f = new File("C:\\Orion\\impfiles\\instcomp.txt");
 		if(!f.exists()) {
@@ -372,7 +372,7 @@ public class retail {
 							proname[lcontrol] = sc.next();
 							System.out.print("Identification code (any length, no letters): ");
 							procode[lcontrol] = sc.nextInt();
-							System.out.println("Final sale price (Use comma to show cents): ");
+							System.out.println("Final sale price (Use full stop to show cents): ");
 							provalue[lcontrol] = sc.next();
 						}
 						if(indr.equals("c")) {
@@ -453,6 +453,7 @@ public class retail {
 						for(int lcontrol = 0; lcontrol < pcount; lcontrol++, arindx++) {
 							writer.format("%s %s %s %d %n", proname[lcontrol], procode[lcontrol], provalue[lcontrol], arindx);
 						}
+						writer.close();
 					}
 				}
 				else if(uinputi == 2) {
@@ -528,6 +529,7 @@ public class retail {
 					else {
 						System.out.println("File not found. Please register details first");
 					}
+					writer.close();
 				}
 				else if(uinputi == 3) {
 					if(indr.equals("c")) {
@@ -574,19 +576,49 @@ public class retail {
 							exprovalue[lcontrol] = reader.next();
 							arindxa[lcontrol] = reader.nextInt();
 						}
-						valid = false;
-						while(!valid) {
+						float csaleprice = 0; //Current sale price
+						float fsaleprice = 0; //Final sale price
+						while(true) {
+							if(uinput.startsWith("f") || uinput.startsWith("F")){
+								break;
+							}
 							System.out.print("Reference code of item: ");
 							uinputi = sc.nextInt();
 							int lcontrol = 0;
-							while(lcontrol < expcount || uinputi != exprocode[lcontrol]) {
+							while(lcontrol != (expcount - 1) || uinputi != exprocode[lcontrol]) {
 								lcontrol++;
+								if(lcontrol > expcount) {
+									lcontrol = 0;
+									break;
+								}
 							}
 							if(uinputi == exprocode[lcontrol]) {
 								System.out.println("Confirm selected product (" + exproname[lcontrol] + ") (y, n)");
 								uinput = sc.next();
 								if(uinput.startsWith("y") || uinput.startsWith("Y")) {
-									valid = true;
+									while(true) {
+										float epv = Float.valueOf(exprovalue[lcontrol]); //To convert selected array index from string to float
+										System.out.print("Please enter amount of " + exproname[lcontrol]);
+										if(exproname[lcontrol].endsWith("s")) {
+											System.out.print(" ");
+										}
+										else {
+											System.out.print("s ");
+										}
+										System.out.print("to purchase: ");
+										uinputi = sc.nextInt();
+										csaleprice = uinputi * epv;
+										fsaleprice += csaleprice; 
+										System.out.printf("%s %f %n%s", "Value of these products: R", csaleprice, "(P)roceed to next item, (F)inalise sale, (I)ncrease amount of current item: ");
+										uinput = sc.next();
+										if(uinput.startsWith("p") || uinput.startsWith("P")) {
+											break;
+										}
+										else if(uinput.startsWith("f") || uinput.startsWith("F")) {
+											System.out.printf("%n%s %n%n%s%s%n%n", "Total value of sale:", "R", fsaleprice);
+											break;
+										}
+									}
 								}
 							}
 						}
