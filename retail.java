@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.*;
 public class retail {
 	public static void main(String[] args) {
+		int lcontrol; //Loop controller
 		int mmin = 100000;
 		int mmax = 999999; //Parameters for manager code generation
 		int emin = 1000;
@@ -269,7 +270,7 @@ public class retail {
 						empsname = new String[ecount];
 						empcode = new int[ecount];
 						int lempcode; //Length of employee code
-						for(int lcontrol = 0; lcontrol < ecount; lcontrol++) {
+						for(lcontrol = 0; lcontrol < ecount; lcontrol++) {
 							System.out.print("Employee Name: ");
 							empname[lcontrol] = sc.next();
 							System.out.print("Employee Surname: ");
@@ -324,7 +325,7 @@ public class retail {
 						exempsname = new String[execount];
 						exempcode = new int[execount];
 						if(f.exists()) { //This block saves the existing employee details 
-							int lcontrol = 0;
+							lcontrol = 0;
 							while(reader.hasNext()) {
 								exempname[lcontrol] = reader.next();
 								exempsname[lcontrol] = reader.next();
@@ -350,12 +351,12 @@ public class retail {
 						}
 						writer.format("%s %n", (ecount + execount));
 						if(f.exists()) {
-							for(int lcontrol = 0; lcontrol < execount; lcontrol++) {
-								writer.format("%s %s %s %d %n", exempname[lcontrol], exempsname[lcontrol], exempcode[lcontrol]);
+							for(lcontrol = 0; lcontrol < execount; lcontrol++) {
+								writer.format("%s %s %s %n", exempname[lcontrol], exempsname[lcontrol], exempcode[lcontrol]);
 							}
 						}
-						for(int lcontrol = 0; lcontrol < ecount; lcontrol++) {
-							writer.format("%s %s %s %d %n", empname[lcontrol], empsname[lcontrol], empcode[lcontrol]);
+						for(lcontrol = 0; lcontrol < ecount; lcontrol++) {
+							writer.format("%s %s %s %n", empname[lcontrol], empsname[lcontrol], empcode[lcontrol]);
 						}
 						System.out.println("Details saved");
 					}
@@ -367,7 +368,7 @@ public class retail {
 						proname = new String[pcount];
 						procode = new int[pcount];
 						provalue = new String[pcount];
-						for(int lcontrol = 0; lcontrol < pcount; lcontrol++) {
+						for(lcontrol = 0; lcontrol < pcount; lcontrol++) {
 							System.out.print("Product name (one word): ");
 							proname[lcontrol] = sc.next();
 							System.out.print("Identification code (any length, no letters): ");
@@ -421,7 +422,7 @@ public class retail {
 						exprovalue = new String[expcount];
 						arindxa = new int[expcount];
 						if(f.exists()) {
-							for(int lcontrol = 0; lcontrol < expcount; lcontrol++) {
+							for(lcontrol = 0; lcontrol < expcount; lcontrol++) {
 								exproname[lcontrol] = reader.next();
 								exprocode[lcontrol] = reader.nextInt();
 								exprovalue[lcontrol] = reader.next();
@@ -446,11 +447,11 @@ public class retail {
 						}
 						writer.format("%s %n", (pcount + expcount));
 						if(f.exists()) {
-							for(int lcontrol = 0; lcontrol < expcount; lcontrol++, arindx++) {
+							for(lcontrol = 0; lcontrol < expcount; lcontrol++, arindx++) {
 								writer.format("%s %s %s %d %n", exproname[lcontrol], exprocode[lcontrol], exprovalue[lcontrol], arindx);
 							}
 						}
-						for(int lcontrol = 0; lcontrol < pcount; lcontrol++, arindx++) {
+						for(lcontrol = 0; lcontrol < pcount; lcontrol++, arindx++) {
 							writer.format("%s %s %s %d %n", proname[lcontrol], procode[lcontrol], provalue[lcontrol], arindx);
 						}
 						writer.close();
@@ -495,13 +496,13 @@ public class retail {
 						exprocode = new int[expcount];
 						exprovalue = new String[expcount];
 						arindxa = new int[expcount];
-						for(int lcontrol = 0; lcontrol < expcount; lcontrol++) {
+						for(lcontrol = 0; lcontrol < expcount; lcontrol++) {
 							exproname[lcontrol] = reader.next();
 							exprocode[lcontrol] = reader.nextInt();
 							exprovalue[lcontrol] = reader.next();
 							arindxa[lcontrol] = reader.nextInt();
 						}
-						for(int lcontrol = 0; lcontrol < expcount; lcontrol++) {
+						for(lcontrol = 0; lcontrol < expcount; lcontrol++) {
 							System.out.printf("%s %d %s %n", exproname[lcontrol], exprocode[lcontrol], exprovalue[lcontrol]);
 						}
 						if(indr.equals("c")) {
@@ -521,7 +522,7 @@ public class retail {
 							}
 						}
 						writer.format("%d %n", expcount);
-						for(int lcontrol = 0; lcontrol < expcount; lcontrol++) {
+						for(lcontrol = 0; lcontrol < expcount; lcontrol++) {
 							writer.format("%s %d %s %d %n", exproname[lcontrol], exprocode[lcontrol], exprovalue[lcontrol], arindxa[lcontrol]);
 						}
 						System.out.println("Save successful");
@@ -570,7 +571,7 @@ public class retail {
 						exprocode = new int[expcount];
 						exprovalue = new String[expcount];
 						arindxa = new int[expcount];
-						for(int lcontrol = 0; lcontrol < expcount; lcontrol++) {
+						for(lcontrol = 0; lcontrol < expcount; lcontrol++) {
 							exproname[lcontrol] = reader.next();
 							exprocode[lcontrol] = reader.nextInt();
 							exprovalue[lcontrol] = reader.next();
@@ -579,19 +580,13 @@ public class retail {
 						float csaleprice = 0; //Current sale price
 						float fsaleprice = 0; //Final sale price
 						while(true) {
+							System.out.println("here too");
 							if(uinput.startsWith("f") || uinput.startsWith("F")){
 								break;
 							}
 							System.out.print("Reference code of item: ");
 							uinputi = sc.nextInt();
-							int lcontrol = 0;
-							while(lcontrol != (expcount - 1) || uinputi != exprocode[lcontrol]) {
-								lcontrol++;
-								if(lcontrol > expcount) {
-									lcontrol = 0;
-									break;
-								}
-							}
+							for(lcontrol = 0; lcontrol <= (expcount - 1) || uinputi != exprocode[lcontrol]; lcontrol++)
 							if(uinputi == exprocode[lcontrol]) {
 								System.out.println("Confirm selected product (" + exproname[lcontrol] + ") (y, n)");
 								uinput = sc.next();
