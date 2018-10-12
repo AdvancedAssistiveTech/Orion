@@ -580,13 +580,24 @@ public class retail {
 						float csaleprice = 0; //Current sale price
 						float fsaleprice = 0; //Final sale price
 						while(true) {
-							System.out.println("here too");
 							if(uinput.startsWith("f") || uinput.startsWith("F")){
 								break;
 							}
 							System.out.print("Reference code of item: ");
 							uinputi = sc.nextInt();
-							for(lcontrol = 0; lcontrol <= (expcount - 1) || uinputi != exprocode[lcontrol]; lcontrol++)
+							lcontrol = 0;
+							while(true) {
+								if(uinputi == exprocode[lcontrol]) {
+									break;
+								}
+								else if(lcontrol >= (expcount - 1)){
+									lcontrol = 0;
+									break;
+								}
+								else {
+									lcontrol++;
+								}
+							}
 							if(uinputi == exprocode[lcontrol]) {
 								System.out.println("Confirm selected product (" + exproname[lcontrol] + ") (y, n)");
 								uinput = sc.next();
