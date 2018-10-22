@@ -12,6 +12,7 @@ public class retail {
 		int empcode[], exempcode[]; //Array holding employee four digit codes, existing codes saver 4 when editing file
 		int procode[], exprocode[]; //Identification code of products, existing products
 		String provalue[], exprovalue[]; //Decimal for price of product, existing products (Done as string to preserve precision)
+		Boolean error = false; //Used if there is an error
 		Boolean valid = false; //To control if an input is valid
 		Boolean exit = false; //Controls main running loop
 		String proname[], exproname[]; //Product name, existing product name
@@ -458,6 +459,7 @@ public class retail {
 					}
 				}
 				else if(uinputi == 2) {
+					error = false;
 					if(indr.equals("c")) {
 						try {
 							f = new File("C:\\Orion\\impfiles\\70726f64696e666f.txt");
@@ -513,7 +515,7 @@ public class retail {
 								writer = new Formatter ("A:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("b") || uinput.startsWith("B")) {
@@ -522,7 +524,7 @@ public class retail {
 								writer = new Formatter ("B:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("c") || uinput.startsWith("C")) {
@@ -531,7 +533,7 @@ public class retail {
 								writer = new Formatter ("C:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("d") || uinput.startsWith("D")) {
@@ -540,7 +542,7 @@ public class retail {
 								writer = new Formatter ("D:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("e") || uinput.startsWith("E")) {
@@ -549,7 +551,7 @@ public class retail {
 								writer = new Formatter ("E:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("f") || uinput.startsWith("F")) {
@@ -558,7 +560,7 @@ public class retail {
 								writer = new Formatter ("F:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("g") || uinput.startsWith("G")) {
@@ -567,7 +569,7 @@ public class retail {
 								writer = new Formatter ("G:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("h") || uinput.startsWith("H")) {
@@ -576,7 +578,7 @@ public class retail {
 								writer = new Formatter ("H:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("i") || uinput.startsWith("I")) {
@@ -585,7 +587,7 @@ public class retail {
 								writer = new Formatter ("I:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("j") || uinput.startsWith("J")) {
@@ -594,7 +596,7 @@ public class retail {
 								writer = new Formatter ("J:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("k") || uinput.startsWith("K")) {
@@ -603,7 +605,7 @@ public class retail {
 								writer = new Formatter ("K:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("l") || uinput.startsWith("L")) {
@@ -612,7 +614,7 @@ public class retail {
 								writer = new Formatter ("L:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("m") || uinput.startsWith("M")) {
@@ -621,7 +623,7 @@ public class retail {
 								writer = new Formatter ("M:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("n") || uinput.startsWith("N")) {
@@ -630,7 +632,7 @@ public class retail {
 								writer = new Formatter ("N:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("o") || uinput.startsWith("O")) {
@@ -639,7 +641,7 @@ public class retail {
 								writer = new Formatter ("O:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("p") || uinput.startsWith("P")) {
@@ -648,7 +650,7 @@ public class retail {
 								writer = new Formatter ("P:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("q") || uinput.startsWith("Q")) {
@@ -657,7 +659,7 @@ public class retail {
 								writer = new Formatter ("Q:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("r") || uinput.startsWith("R")) {
@@ -666,7 +668,7 @@ public class retail {
 								writer = new Formatter ("R:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("s") || uinput.startsWith("S")) {
@@ -675,7 +677,7 @@ public class retail {
 								writer = new Formatter ("S:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("t") || uinput.startsWith("T")) {
@@ -684,7 +686,7 @@ public class retail {
 								writer = new Formatter ("T:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("u") || uinput.startsWith("U")) {
@@ -693,7 +695,7 @@ public class retail {
 								writer = new Formatter ("U:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("v") || uinput.startsWith("V")) {
@@ -702,7 +704,7 @@ public class retail {
 								writer = new Formatter ("V:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("w") || uinput.startsWith("W")) {
@@ -711,7 +713,7 @@ public class retail {
 								writer = new Formatter ("W:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("x") || uinput.startsWith("X")) {
@@ -720,7 +722,7 @@ public class retail {
 								writer = new Formatter ("X:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("y") || uinput.startsWith("Y")) {
@@ -729,7 +731,7 @@ public class retail {
 								writer = new Formatter ("Y:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
 						else if(uinput.startsWith("z") || uinput.startsWith("Z")) {
@@ -738,14 +740,19 @@ public class retail {
 								writer = new Formatter ("Z:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Error saving product details");
+								error = true;
 							}
 						}
-						writer.format("%d %n", expcount);
-						for(lcontrol = 0; lcontrol < expcount; lcontrol++) {
-							writer.format("%s %d %s %d %n", exproname[lcontrol], exprocode[lcontrol], exprovalue[lcontrol], arindxa[lcontrol]);
+						if(error) {
+							System.out.println("Error saving details. Likely invalid saving path");
 						}
-						System.out.println("Save successful");
+						else {
+							writer.format("%d %n", expcount);
+							for(lcontrol = 0; lcontrol < expcount; lcontrol++) {
+								writer.format("%s %d %s %d %n", exproname[lcontrol], exprocode[lcontrol], exprovalue[lcontrol], arindxa[lcontrol]);
+							}
+							System.out.println("Save successful");
+						}
 					}
 					else {
 						System.out.println("File not found. Please register details first");
