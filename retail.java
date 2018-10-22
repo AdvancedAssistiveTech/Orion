@@ -508,6 +508,7 @@ public class retail {
 						System.out.println("Please specify backup drive: ");
 						uinput = sc.next();
 						if(uinput.startsWith("a") || uinput.startsWith("A")) {
+							new File("A:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("A:\\Obups\\prodinf.txt");
 							}
@@ -516,6 +517,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("b") || uinput.startsWith("B")) {
+							new File("B:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("B:\\Obups\\prodinf.txt");
 							}
@@ -524,6 +526,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("c") || uinput.startsWith("C")) {
+							new File("C:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("C:\\Obups\\prodinf.txt");
 							}
@@ -532,6 +535,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("d") || uinput.startsWith("D")) {
+							new File("D:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("D:\\Obups\\prodinf.txt");
 							}
@@ -540,6 +544,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("e") || uinput.startsWith("E")) {
+							new File("E:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("E:\\Obups\\prodinf.txt");
 							}
@@ -548,6 +553,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("f") || uinput.startsWith("F")) {
+							new File("F:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("F:\\Obups\\prodinf.txt");
 							}
@@ -556,6 +562,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("g") || uinput.startsWith("G")) {
+							new File("G:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("G:\\Obups\\prodinf.txt");
 							}
@@ -564,6 +571,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("h") || uinput.startsWith("H")) {
+							new File("H:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("H:\\Obups\\prodinf.txt");
 							}
@@ -572,6 +580,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("i") || uinput.startsWith("I")) {
+							new File("I:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("I:\\Obups\\prodinf.txt");
 							}
@@ -580,6 +589,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("j") || uinput.startsWith("J")) {
+							new File("J:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("J:\\Obups\\prodinf.txt");
 							}
@@ -588,6 +598,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("k") || uinput.startsWith("K")) {
+							new File("K:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("K:\\Obups\\prodinf.txt");
 							}
@@ -596,6 +607,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("l") || uinput.startsWith("L")) {
+							new File("L:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("L:\\Obups\\prodinf.txt");
 							}
@@ -604,6 +616,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("m") || uinput.startsWith("M")) {
+							new File("M:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("M:\\Obups\\prodinf.txt");
 							}
@@ -612,6 +625,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("n") || uinput.startsWith("N")) {
+							new File("N:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("N:\\Obups\\prodinf.txt");
 							}
@@ -620,6 +634,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("o") || uinput.startsWith("O")) {
+							new File("O:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("O:\\Obups\\prodinf.txt");
 							}
@@ -628,6 +643,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("p") || uinput.startsWith("P")) {
+							new File("P:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("P:\\Obups\\prodinf.txt");
 							}
@@ -636,6 +652,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("q") || uinput.startsWith("Q")) {
+							new File("Q:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("Q:\\Obups\\prodinf.txt");
 							}
@@ -644,6 +661,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("r") || uinput.startsWith("R")) {
+							new File("R:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("R:\\Obups\\prodinf.txt");
 							}
@@ -652,6 +670,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("s") || uinput.startsWith("S")) {
+							new File("S:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("S:\\Obups\\prodinf.txt");
 							}
@@ -660,6 +679,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("t") || uinput.startsWith("T")) {
+							new File("T:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("T:\\Obups\\prodinf.txt");
 							}
@@ -668,6 +688,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("u") || uinput.startsWith("U")) {
+							new File("U:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("U:\\Obups\\prodinf.txt");
 							}
@@ -676,6 +697,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("v") || uinput.startsWith("V")) {
+							new File("V:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("V:\\Obups\\prodinf.txt");
 							}
@@ -684,6 +706,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("w") || uinput.startsWith("W")) {
+							new File("W:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("W:\\Obups\\prodinf.txt");
 							}
@@ -692,6 +715,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("x") || uinput.startsWith("X")) {
+							new File("X:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("X:\\Obups\\prodinf.txt");
 							}
@@ -700,6 +724,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("y") || uinput.startsWith("Y")) {
+							new File("Y:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("Y:\\Obups\\prodinf.txt");
 							}
@@ -708,6 +733,7 @@ public class retail {
 							}
 						}
 						else if(uinput.startsWith("z") || uinput.startsWith("Z")) {
+							new File("Z:\\Obups").mkdir();
 							try {
 								writer = new Formatter ("Z:\\Obups\\prodinf.txt");
 							}
