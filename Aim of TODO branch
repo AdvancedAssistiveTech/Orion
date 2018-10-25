@@ -3,9 +3,8 @@ These usually mean that a function is working, but could be expanded upon in ord
 
 Current TODOs:
 - Allow the manager to vew how many employees have been already registered when registering new employees
-- When "saving and viewing" the information on file, the manager should be able to specify a second directory to clone the files to, 
-  effectively acting as a backup utility
-  - This function should also be expanded to save the information about employees that is on file
+- Backup function should also be expanded to save the information about employees that is on file
  
 Completed TODOs: 
-- None yet
+- When "saving and viewing" the information on file, the manager should be able to specify a second directory to clone the files to, 
+  effectively acting as a backup utility
