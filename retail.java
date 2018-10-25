@@ -12,6 +12,7 @@ public class retail {
 		int empcode[], exempcode[]; //Array holding employee four digit codes, existing codes saver 4 when editing file
 		int procode[], exprocode[]; //Identification code of products, existing products
 		String provalue[], exprovalue[]; //Decimal for price of product, existing products (Done as string to preserve precision)
+		Boolean error = false; //Used if there is an error
 		Boolean valid = false; //To control if an input is valid
 		Boolean exit = false; //Controls main running loop
 		String proname[], exproname[]; //Product name, existing product name
@@ -27,7 +28,7 @@ public class retail {
 		Random cgen = new Random(); //Generates manager code
 		f = new File("C:\\Orion\\impfiles\\instcomp.txt");
 		if(!f.exists()) {
-			f = new File("D:\\Orion\\impfiles\\instcomp.txt");
+			f = new File("D:\\Orion\\impfiles\\instcomp.txt"); 
 			if(!f.exists()) {
 				 { //Installer chunk
 						while(!valid) {
@@ -458,6 +459,7 @@ public class retail {
 					}
 				}
 				else if(uinputi == 2) {
+					error = false;
 					if(indr.equals("c")) {
 						try {
 							f = new File("C:\\Orion\\impfiles\\70726f64696e666f.txt");
@@ -505,27 +507,252 @@ public class retail {
 						for(lcontrol = 0; lcontrol < expcount; lcontrol++) {
 							System.out.printf("%s %d %s %n", exproname[lcontrol], exprocode[lcontrol], exprovalue[lcontrol]);
 						}
-						if(indr.equals("c")) {
+						System.out.println("Please specify backup drive: ");
+						uinput = sc.next();
+						if(uinput.startsWith("a") || uinput.startsWith("A")) {
+							new File("A:\\Obups").mkdir();
 							try {
-								writer = new Formatter("C:\\Orion\\impfiles\\70726f64696e666f.txt");
+								writer = new Formatter ("A:\\Obups\\prodinf.txt");
 							}
 							catch(Exception e) {
-								System.out.println("Unknown error. Line 507");
+								error = true;
 							}
+						}
+						else if(uinput.startsWith("b") || uinput.startsWith("B")) {
+							new File("B:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("B:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("c") || uinput.startsWith("C")) {
+							new File("C:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("C:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("d") || uinput.startsWith("D")) {
+							new File("D:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("D:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("e") || uinput.startsWith("E")) {
+							new File("E:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("E:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("f") || uinput.startsWith("F")) {
+							new File("F:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("F:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("g") || uinput.startsWith("G")) {
+							new File("G:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("G:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("h") || uinput.startsWith("H")) {
+							new File("H:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("H:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("i") || uinput.startsWith("I")) {
+							new File("I:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("I:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("j") || uinput.startsWith("J")) {
+							new File("J:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("J:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("k") || uinput.startsWith("K")) {
+							new File("K:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("K:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("l") || uinput.startsWith("L")) {
+							new File("L:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("L:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("m") || uinput.startsWith("M")) {
+							new File("M:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("M:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("n") || uinput.startsWith("N")) {
+							new File("N:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("N:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("o") || uinput.startsWith("O")) {
+							new File("O:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("O:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("p") || uinput.startsWith("P")) {
+							new File("P:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("P:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("q") || uinput.startsWith("Q")) {
+							new File("Q:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("Q:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("r") || uinput.startsWith("R")) {
+							new File("R:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("R:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("s") || uinput.startsWith("S")) {
+							new File("S:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("S:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("t") || uinput.startsWith("T")) {
+							new File("T:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("T:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("u") || uinput.startsWith("U")) {
+							new File("U:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("U:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("v") || uinput.startsWith("V")) {
+							new File("V:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("V:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("w") || uinput.startsWith("W")) {
+							new File("W:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("W:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("x") || uinput.startsWith("X")) {
+							new File("X:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("X:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("y") || uinput.startsWith("Y")) {
+							new File("Y:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("Y:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						else if(uinput.startsWith("z") || uinput.startsWith("Z")) {
+							new File("Z:\\Obups").mkdir();
+							try {
+								writer = new Formatter ("Z:\\Obups\\prodinf.txt");
+							}
+							catch(Exception e) {
+								error = true;
+							}
+						}
+						if(error) {
+							System.out.println("Error saving details. Likely invalid saving path");
 						}
 						else {
-							try {
-								writer = new Formatter("D:\\Orion\\impfiles\\70726f64696e666f.txt");
+							writer.format("%d %n", expcount);
+							for(lcontrol = 0; lcontrol < expcount; lcontrol++) {
+								writer.format("%s %d %s %d %n", exproname[lcontrol], exprocode[lcontrol], exprovalue[lcontrol], arindxa[lcontrol]);
 							}
-							catch(Exception e) {
-								System.out.println("Unknown error. Line 515");
-							}
+							System.out.println("Save successful");
 						}
-						writer.format("%d %n", expcount);
-						for(lcontrol = 0; lcontrol < expcount; lcontrol++) {
-							writer.format("%s %d %s %d %n", exproname[lcontrol], exprocode[lcontrol], exprovalue[lcontrol], arindxa[lcontrol]);
-						}
-						System.out.println("Save successful");
 					}
 					else {
 						System.out.println("File not found. Please register details first");
