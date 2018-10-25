@@ -28,7 +28,7 @@ public class retail {
 		Random cgen = new Random(); //Generates manager code
 		f = new File("C:\\Orion\\impfiles\\instcomp.txt");
 		if(!f.exists()) {
-			f = new File("D:\\Orion\\impfiles\\instcomp.txt");
+			f = new File("D:\\Orion\\impfiles\\instcomp.txt"); 
 			if(!f.exists()) {
 				 { //Installer chunk
 						while(!valid) {
